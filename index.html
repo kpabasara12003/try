@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="styles1.css">
+</head>
+<body>
+    <header class="header">
+        <nav class="navbar">
+            <div class="logo">Pabsara Jayawickrama</div>
+            <ul class="nav-menu">
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Home</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">About</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Services</a>
+                </li>
+                <li class="nav-item">
+                    <a href="#" class="nav-link">Contact</a>
+                </li>
+            </ul>
+            <div class="hamburger">
+                <span class="bar"></span>
+                <span class="bar"></span>
+                <span class="bar"></span>
+            </div>
+        </nav>
+    </header>
+
+
+    <section class="hero1">
+        <h3>Hello</h1>
+        <h2>I'm Pabasara Jayawickrama</h2>
+    </section>
+
+    <section class="hero">
+        <h3>Welcome to My Portfolio</h1>
+        <p>Explore my projects and learn more about me</p>
+    </section>
+
+    <section class="content-1">
+
+        <card class="card-1">
+            <img class="profile-img" src="jack-ma.jpg" alt="profile image.">
+            
+        </card>
+        <!--
+        <table>
+            <tr>
+              <td class="column1">
+                <img class="profile-img" src="jack-ma.jpg" alt="profile image.">
+              </td>
+              <td class="column2"></td>
+            <tr>
+              <td></td>
+              <td ></td>
+            </tr>
+          </table>
+        -->
+        <card class="card-2">
+            <h3>Hi, I'm Pabsara Jayawickrama</h3>
+            <p>I'm a passionate web developer and designer. I love to create beautiful and functional websites. I'm currently working as a full
+                 stack developer at an international startup. </p>
+        </card>
+
+    </section>
+
+
+
+
+
+    <script>
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const header = document.querySelector('.header');
+
+        // Handle hamburger menu click
+        hamburger.addEventListener('click', () => {
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+        });
+
+        // Close menu when clicking a link
+        document.querySelectorAll('.nav-link').forEach(link => {
+            link.addEventListener('click', () => {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            });
+        });
+
+        // Close menu when clicking outside
+        document.addEventListener('click', (e) => {
+            if (!header.contains(e.target) && navMenu.classList.contains('active')) {
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+            }
+        });
+
+        // Prevent body scrolling when mobile menu is open
+        document.addEventListener('DOMContentLoaded', () => {
+            hamburger.addEventListener('click', () => {
+                document.body.style.overflow = navMenu.classList.contains('active') ? 'hidden' : 'auto';
+            });
+        });
+    </script>
+
+    
+</body>
+</html>
