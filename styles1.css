@@ -103,7 +103,7 @@ body {
 
 
 /* Mobile responsive styles */
-@media (max-width: 600px) {
+@media (max-width: 768px) {
     .logo {
         display: block; /* Show logo only on mobile */
     }
@@ -112,12 +112,18 @@ body {
         display: flex;
     }
 
+    .bar {
+        width: 20px;
+        height: 2px;
+        margin: 3px 0;
+        background-color: #fff;
+    }
     .nav-menu {
         display: none;
         position: fixed;
         top: 50px; /* Height of header */
         left: 0;
-        width: 100%;
+        width: 80%;
         background-color: var(--primary-color);
         flex-direction: column;
         padding: 1rem 0;
@@ -190,6 +196,7 @@ td {
 .column1 {
     align-content: center;
     background-color: var(--third-color);
+    align-items: center;
 }
 .column2 {
     width: 60%;
@@ -210,37 +217,45 @@ td {
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    width: 30%;
+    width: 100%;
     height: 100%;
     background-color: var(--third-color);
 }
 .card-2 {
     display: flex;
     flex-direction: column;
-    align-items: center;
     justify-content: center;
-    width: 70%;
+    align-items: center;
+    width: 100%;
     height: 100%;
     background-color: var(--secondary-color);
-    margin-left: 30%;
-    margin-top: -40vh;
     height: 40vh;
    
 }
-@media (max-width: 900px) {
+@media (min-width: 768px) {
     .card-1 {
-        width: 100%;
-        align-items: center;
-        padding-bottom: 10px;
+       
+        display: none;
+        
 
 
     }
     .card-2  {
-        width: 100%;
+        display: none;
+      
        
-        margin-top: 40vh;
+       
 
     }
+    
+}
+
+@media (max-width: 768px) {
+    .profile-table {
+         display: none;
+}
+
+
 }
 
 
